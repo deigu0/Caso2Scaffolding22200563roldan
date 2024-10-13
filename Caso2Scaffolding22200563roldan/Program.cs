@@ -1,4 +1,5 @@
 using Caso2Scaffolding22200563roldan.Models;
+using Caso2Scaffolding22200563roldan.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ParcialDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IAutoPartsRepository, AutoPartsRepository>();
 
 var app = builder.Build();
 

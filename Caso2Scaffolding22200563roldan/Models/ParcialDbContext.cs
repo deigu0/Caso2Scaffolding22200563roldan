@@ -39,4 +39,6 @@ public partial class ParcialDbContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    public DbSet<AutoParts> AutoParts { get; set; }
 }
+
